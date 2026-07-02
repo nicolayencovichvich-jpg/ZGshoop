@@ -1,0 +1,170 @@
+/* Сброс и базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #0b0b0b;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 16px 12px 20px;
+}
+
+/* Шапка — нормальная высота, ширина как у контейнера с кнопками */
+.header {
+    width: 100%;
+    max-width: 480px;
+    height: 90px;                 /* фиксированная нормальная высота */
+    margin: 0 auto 24px;
+    background: #141414;
+    background-image: radial-gradient(circle at 30% 30%, #222, #0a0a0a);
+    border: 1px solid #2a2a2a;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;                    /* расстояние между лого и текстом */
+    padding: 0 20px;
+}
+
+/* Логотип — квадратный, размер 56x56 */
+.logo-img {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    background: #222;
+    border: 2px solid #ffb800;
+    border-radius: 0;             /* чёткий квадрат */
+    flex-shrink: 0;
+}
+
+/* Название — прежний размер */
+.brand-name {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #ffb800, #ff7b00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 20px rgba(255, 184, 0, 0.2);
+    white-space: nowrap;
+}
+
+/* Сетка кнопок — две колонки */
+.categories {
+    width: 100%;
+    max-width: 480px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+/* Стиль кнопок-секций */
+.category-btn {
+    background: #1c1c1c;
+    background-image: radial-gradient(circle at 10% 20%, #2a2a2a, #121212);
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 24px 12px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #f0f0f0;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    transition: all 0.15s ease;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    word-break: break-word;
+    line-height: 1.3;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.category-btn:active {
+    transform: scale(0.96);
+    background: #2a2a2a;
+    border-color: #ffb800;
+    box-shadow: 0 0 15px rgba(255, 184, 0, 0.2);
+}
+
+/* Цветные акценты */
+.category-btn:nth-child(1) { border-left: 4px solid #ffb800; }
+.category-btn:nth-child(3) { border-left: 4px solid #ff6b6b; }
+.category-btn:nth-child(5) { border-left: 4px solid #4ecdc4; }
+.category-btn:nth-child(7) { border-left: 4px solid #ffe66d; }
+
+/* Футер */
+.footer {
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666;
+    border-top: 1px solid #222;
+    padding-top: 18px;
+    margin-top: 6px;
+}
+
+.footer p {
+    letter-spacing: 1px;
+}
+
+/* Адаптация для узких экранов */
+@media (max-width: 400px) {
+    .categories {
+        gap: 10px;
+    }
+    .category-btn {
+        padding: 18px 8px;
+        font-size: 0.95rem;
+        min-height: 72px;
+        border-radius: 16px;
+    }
+    .brand-name {
+        font-size: 1.1rem;
+    }
+    .logo-img {
+        width: 44px;
+        height: 44px;
+    }
+    .header {
+        height: 76px;            /* чуть меньше на маленьких экранах */
+        gap: 10px;
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 340px) {
+    .categories {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .category-btn {
+        min-height: 64px;
+        padding: 16px;
+    }
+    .header {
+        height: 70px;
+    }
+    .brand-name {
+        font-size: 1rem;
+    }
+    .logo-img {
+        width: 40px;
+        height: 40px;
+    }
+}
