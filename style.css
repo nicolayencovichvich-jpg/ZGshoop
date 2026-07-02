@@ -131,7 +131,7 @@ body {
     .category-btn {
         padding: 18px 8px;
         font-size: 0.95rem;
-        min-height: 72px;
+        min-height: 200px;
         border-radius: 16px;
     }
     .brand-name {
