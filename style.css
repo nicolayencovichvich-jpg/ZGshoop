@@ -49,9 +49,8 @@ body {
     font-size: 1.35rem;
     font-weight: 700;
     letter-spacing: 2px;
-    color: #ffffff;              /* ← просто цвет, например жёлтый */
+    color: #ffffff;
     text-shadow: 0 0 20px rgba(255, 184, 0, 0.2);
-    /* удалите всё, что связано с background и -webkit-background-clip */
 }
 
 /* Сетка из 4 кнопок */
@@ -128,7 +127,7 @@ body {
     left: 0;
     right: 0;
     width: 100%;
-    max-width: 480px;         /* центрируем на широких экранах */
+    max-width: 480px;
     margin: 0 auto;
     background: #0b0b0b;
     border-top: 1px solid #222;
@@ -158,12 +157,15 @@ body {
     min-width: 48px;
 }
 
-.nav-icon {
-    font-size: 1.5rem;
-    line-height: 1.2;
+/* Иконка-картинка */
+.nav-icon-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
     margin-bottom: 2px;
-    color: #888;
-    transition: color 0.2s;
+    opacity: 0.6;
+    filter: grayscale(1);
+    transition: all 0.2s ease;
 }
 
 .nav-label {
@@ -173,18 +175,22 @@ body {
     transition: color 0.2s;
 }
 
-/* Активный пункт (можно установить класс active на нужный) */
-.nav-item.active .nav-icon,
-.nav-item.active .nav-label {
-    color: #ffffff;
+/* Активный пункт */
+.nav-item.active .nav-icon-img {
+    opacity: 1;
+    filter: grayscale(0);
 }
 
 .nav-item.active .nav-label {
+    color: #ffffff;
     font-weight: 600;
 }
 
 /* При нажатии (touch) слегка меняем цвет */
-.nav-item:active .nav-icon,
+.nav-item:active .nav-icon-img {
+    opacity: 0.8;
+    filter: grayscale(0.5);
+}
 .nav-item:active .nav-label {
     color: #ccc;
 }
@@ -212,8 +218,9 @@ body {
     .bottom-nav {
         height: 58px;
     }
-    .nav-icon {
-        font-size: 1.3rem;
+    .nav-icon-img {
+        width: 20px;
+        height: 20px;
     }
     .nav-label {
         font-size: 0.6rem;
@@ -238,8 +245,9 @@ body {
     .bottom-nav {
         height: 52px;
     }
-    .nav-icon {
-        font-size: 1.1rem;
+    .nav-icon-img {
+        width: 18px;
+        height: 18px;
     }
     .nav-label {
         font-size: 0.55rem;
